@@ -1,5 +1,6 @@
 # Wayve - Project documentation
 
+![Wayve](ux-ui/screens/wayve.png)   
 **Team Members:** David Sauer, Azur Mešić, Valeria Chavez-Klier, Michael Giang, Ralf Vetter
 
 **Author:** David Sauer (davidsauer@web.de)
@@ -12,9 +13,10 @@ This Git project contains our team result during the 2nd Gastrohackathon on Nove
 - [Link to User Flow](https://whimsical.com/memories-477bN2r2PB5y6mhaZHsFkF)  
 The user flow describes three basic flows of the most important interactions. These are meeting locals, finding points of interest (POI), and accessing past memories. The first flow deals with finding a POI. The app does not offer specific locations, instead users are limited to broader options such as "bar/café," museum, beach, etc. The app then randomly selects one of the options available nearby and activates the wristband. The bracelet guides the user to their destination by giving haptic, visual and auditive feedback. There is no other way to find the destination because the goal is to drift and encourage exploration. The second process involves meeting locals. First, the option must be enabled within the app, otherwise the feature is disabled. No further user input is required. Once the user is near a friendly local person, both wristbands vibrate. Users are prompted to wave to the other person. Once both wave, a connection is established and stored in the app. The last feature deals with recapturing experiences. Here, users can see all their pictures, the places they have visited, and all the people they have met and connected with so far.
 
-- `wayve.xd`  
+- `wayve.xd`
 The xd-file contains the current state of the companion application which is mainly there to revisit collected experiences in retrospect. After building some rough wireframes in the beginning to start prototyping, we quickly passed over to conceptualise the three main user flows in high-fidelity. The first user flow is to find a local person in the area. Users can locate other people or locals to engage in conversation and share their impressions of the city and let them discover hidden treasures of the city. The second user flow allows users to explore the city based on their stated preferences. When a local store is found, the user receives a small gift in the form of a voucher to try it out. The third flow includes memories of past trips and shows pictures taken and moments shared in places or with people.
-Our mockup targets the iPhone X/11/12 resolution to have a large viewport that can highlight the most important element of our application: the images and videos of the past experiences. Therefore, we designed our UI elements according to Apple's Human Interaction Guidelines to meet human factors and ergonomics standards in screen design. The look and feel of this concept is meant to convey a sense of nostalgia and make the user recapture the adventurous moments in life.
+Our mockup targets the iPhone X/11/12 resolution to have a large viewport that can highlight the most important element of our application: the images and videos of the past experiences. Therefore, we designed our UI elements according to Apple's Human Interaction Guidelines to meet human factors and ergonomics standards in screen design. The look and feel of this concept is meant to convey a sense of nostalgia and make the user recapture the adventurous moments in life.  
+![Screenmockup](ux-ui/screens/screen_mockup.png)  
 
 - `wearable.ino`  
 In this Arduino script we prototyped first simple demos of our two main user interactions with the wearable device. That means
