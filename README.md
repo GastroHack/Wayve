@@ -16,7 +16,7 @@ The user flow describes three basic flows of the most important interactions. Th
 The xd-file contains the current state of the companion application which is mainly there to revisit collected experiences in retrospect. After building some rough wireframes in the beginning to start prototyping, we quickly passed over to conceptualise the three main user flows in high-fidelity. The first user flow is to find a local person in the area. Users can locate other people or locals to engage in conversation and share their impressions of the city and let them discover hidden treasures of the city. The second user flow allows users to explore the city based on their stated preferences. When a local store is found, the user receives a small gift in the form of a voucher to try it out. The third flow includes memories of past trips and shows pictures taken and moments shared in places or with people.
 Our mockup targets the iPhone X/11/12 resolution to have a large viewport that can highlight the most important element of our application: the images and videos of the past experiences. Therefore, we designed our UI elements according to Apple's Human Interaction Guidelines to meet human factors and ergonomics standards in screen design. The look and feel of this concept is meant to convey a sense of nostalgia and make the user recapture the adventurous moments in life.
 
-- `wearable.ino`
+- `wearable.ino`  
 In this Arduino script we prototyped first simple demos of our two main user interactions with the wearable device. That means
 	>**a)** the user interaction when meeting up with a local  
 	>**b)** the user interaction when connecting with a POI
@@ -60,7 +60,7 @@ VIDEO1
 
 The demo starts with a notification that an open-minded local is nearby (blinking light). You think about connect with the local to get to know more about the city you are visiting. Once both decided to look for each other and connect, the bracelet enters a searching mode (rotating light). Awesome, I think you found each other after two minutes of searching. Let's get ready to connect. How do we do that? With a typical gesture that is older than any electrical device you might know - just wave to each other. The bracelet recognizes the gesture and connects with the local (brightening circle). Now let's forget the technical part, put your smartphone away and collect exciting experiences in new cities and countries you won't forget for your whole live. Don't worry, your bracelet remembers the connection and saves a personal token (photo, voice memo, etc.) of your peer to revisit the memory digitally in retrospect.
 
-VIDEO2
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/WEb-KVo_ETg/0.jpg)](https://youtu.be/WEb-KVo_ETg)
 
 ### Interaction demo #2 - Connecting with a POI
 
