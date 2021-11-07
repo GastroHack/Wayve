@@ -27,7 +27,7 @@ In this Arduino script we prototyped first simple demos of our two main user int
 
 The prototype setup is built on the single-board microcontroller **Arduino UNO**. The programming language is C++. In order to rebuild the prototype, we recommend using the Arduino IDE. As you have to install some libraries (see `#includes` in `wearable.ino`) to make the used hardware components work correctly, you can do that easily via the IDE (Tools > Manage libraries).
 
-We added a circuit diagram of the hardware setup in the media folder. Just follow this instruction while building it.
+We added a circuit diagram of the hardware setup in the media folder. Just follow this instruction while building it. Click on the pictures below to see a video of the described interaction with our wearable protoype demonstration.
 
 ## List of required materials
 
@@ -51,7 +51,7 @@ We added a circuit diagram of the hardware setup in the media folder. Just follo
 
 You can switch between the two user interaction demos with the button(s) on the small breadboard. A little RGB right next to it visualises in which demo you are in.
 
-VIDEO1
+[![](https://img.youtube.com/vi/wMQcfrJDEfM/0.jpg)](https://youtu.be/wMQcfrJDEfM)
 
 >**Turquoise light:**	Interaction demo #1 - Meeting a local  
 >**Orange light:** 		Interaction demo #2 - Connecting with a POI
@@ -60,13 +60,14 @@ VIDEO1
 
 The demo starts with a notification that an open-minded local is nearby (blinking light). You think about connect with the local to get to know more about the city you are visiting. Once both decided to look for each other and connect, the bracelet enters a searching mode (rotating light). Awesome, I think you found each other after two minutes of searching. Let's get ready to connect. How do we do that? With a typical gesture that is older than any electrical device you might know - just wave to each other. The bracelet recognizes the gesture and connects with the local (brightening circle). Now let's forget the technical part, put your smartphone away and collect exciting experiences in new cities and countries you won't forget for your whole live. Don't worry, your bracelet remembers the connection and saves a personal token (photo, voice memo, etc.) of your peer to revisit the memory digitally in retrospect.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/WEb-KVo_ETg/0.jpg)](https://youtu.be/WEb-KVo_ETg)
+[![](https://img.youtube.com/vi/WEb-KVo_ETg/0.jpg)](https://youtu.be/WEb-KVo_ETg)
 
 ### Interaction demo #2 - Connecting with a POI
 
 The second demo is about connecting with a POI. A POI can be any local activity (like a sightseeing tour) or building (local bar). The operators can decide to be part of our ecosystem. Once you decided inside the companion app to receive notifications about special kinds of POI's in your surrounding, this function will be available. Assuming you want to visit those special local restaurants, you receive a notification (blinking light). When you entered the restaurant, you can connect to the POI via RFID (filling circle). Let's hope you get a discount on your delicious pizza for that ;-)
 
-VIDEO3
+[![](https://img.youtube.com/vi/9dB1ZmeTohs/0.jpg)](https://youtu.be/9dB1ZmeTohs)
+https://youtu.be/9dB1ZmeTohs
 
 # Outlook
 
