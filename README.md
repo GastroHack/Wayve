@@ -67,7 +67,6 @@ The demo starts with a notification that an open-minded local is nearby (blinkin
 The second demo is about connecting with a POI. A POI can be any local activity (like a sightseeing tour) or building (local bar). The operators can decide to be part of our ecosystem. Once you decided inside the companion app to receive notifications about special kinds of POI's in your surrounding, this function will be available. Assuming you want to visit those special local restaurants, you receive a notification (blinking light). When you entered the restaurant, you can connect to the POI via RFID (filling circle). Let's hope you get a discount on your delicious pizza for that ;-)
 
 [![](https://img.youtube.com/vi/9dB1ZmeTohs/0.jpg)](https://youtu.be/9dB1ZmeTohs)
-https://youtu.be/9dB1ZmeTohs
 
 # Outlook
 
