@@ -17,19 +17,15 @@
 // Brand colors
 #define HUE_LOCAL 125 // main color
 #define SAT_LOCAL 220
-#define HUE_POI 200   // secondary color
-#define SAT_POI 200
-
-// Create a gradient palette
-// |-----------------------|
-// BLUE...RED...BLUE
-DEFINE_GRADIENT_PALETTE(blue_red_p) {
+#define HUE_POI 40    // secondary color
+#define SAT_POI 80
+DEFINE_GRADIENT_PALETTE(green_p) { // gradient palette
   0,   0, 120, 90,
   85,  0,  80,  45,
   170, 0,  30,  10,
   255, 0,   0,   0
 };
-CRGBPalette256 my_gradient = blue_red_p;
+CRGBPalette256 my_gradient = green_p;
 
 // Hardware components (instances)
 MFRC522 mfrc522(SS_PIN, RST_PIN); // rfid-reader
@@ -40,7 +36,6 @@ Bounce button = Bounce();         // button
 uint8_t blinking_count, blinking_value, shake_count, pos, tilt_state, tilt_state_previous, waving_brightness;
 bool blinking_switch;
 
-// How many pulses per minute
 uint8_t bpm = 30;
 
 void setup() {
@@ -58,18 +53,13 @@ void setup() {
   pinMode(TILT_PIN, INPUT_PULLUP); // init tilt switch with an active in-built pull-up resistor
 }
 
-void checkRFIDContact() {
-  mfrc522.PICC_IsNewCardPresent(); // check for rfid contact
-  mfrc522.PICC_ReadCardSerial();   // check for rfid contact
+////////////////////////////////////////////////
+////////////// DEMO #1 - LOCAL /////////////////
+////////////////////////////////////////////////
 
-  //for (int i = 0; i < mfrc522.uid.size; i++) {
-  //Serial.print(mfrc522.uid.uidByte[i], HEX);
-  //Serial.print(" ");
-  //}
-}
-
+// starts interaction demo #1 - meeting a local
 void playDemoLocal() {
-  resetValues();
+  resetLocalDemo();
   newNotification(HUE_LOCAL, SAT_LOCAL);
   delay(3000);
   findingLocal();
@@ -81,7 +71,8 @@ void playDemoLocal() {
 }
 
 // resets variables for the local-demo
-void resetValues() {
+void resetLocalDemo() {
+  turnOffLighting();
   blinking_count = 0;
   blinking_value = 31;
   blinking_switch = true;
@@ -120,7 +111,7 @@ void turnOffLighting() {
   FastLED.show();
 }
 
-// animation when user is actively looking for the local
+// display animation when user is actively looking for the local
 void findingLocal() {
   while (shake_count < 5) {
     countShakes();
@@ -129,14 +120,16 @@ void findingLocal() {
   turnOffLighting();
 }
 
+// counts the shakes on the tilt sensor
 void countShakes() {
-  tilt_state = digitalRead(TILT_PIN); // read state of tilt switch
+  tilt_state = digitalRead(TILT_PIN);
   if (tilt_state != tilt_state_previous) {
     shake_count++;
   }
   tilt_state_previous = tilt_state;
 }
 
+// animation for searching the local  nearby
 void movingDot() {
   EVERY_N_MILLIS(1) {
     Serial.println(pos);
@@ -150,35 +143,68 @@ void movingDot() {
   }
 }
 
+// final waving animation for connecting with a local (brightening circle)
 void connectToLocal() {
-  FastLED.setBrightness(0);                               // set brightness
+  FastLED.setBrightness(0);
   fill_solid(leds, NUM_LEDS, CHSV(HUE_LOCAL, SAT_LOCAL, 175));
   FastLED.show();
   while (waving_brightness < 30) {
     EVERY_N_MILLIS(30) {
-      FastLED.setBrightness(waving_brightness++);                               // set brightness
-      //fill_solid(leds, NUM_LEDS, CHSV(HUE_LOCAL, SAT_LOCAL, 175));
+      FastLED.setBrightness(waving_brightness++);
       FastLED.show();
-      //FastLED.clear();
     }
   }
 }
 
+////////////////////////////////////////////////
+/////////////// DEMO #2 - POI //////////////////
+////////////////////////////////////////////////
+
+// starts interaction demo #2 - connecting with a POI
+void playDemoPOI() {
+  resetPOIDemo();
+  newNotification(HUE_POI, SAT_POI);
+  delay(3000);
+  FastLED.show();
+  fillCircle();
+}
+
+void resetPOIDemo() {
+  turnOffLighting();
+}
+
+void checkRFIDContact() {
+  mfrc522.PICC_IsNewCardPresent(); // check for rfid contact
+  mfrc522.PICC_ReadCardSerial();   // check for rfid contact
+
+  //for (int i = 0; i < mfrc522.uid.size; i++) {
+  //Serial.print(mfrc522.uid.uidByte[i], HEX);
+  //Serial.print(" ");
+  //}
+}
+
+// animation when connecting with a RFID
 void fillCircle() {
-  EVERY_N_MILLIS(5) {
+  while (true) {
+    EVERY_N_MILLIS(5) {
+      // Clear strip
+      FastLED.clear();
 
-    // beat8(x) returns a number from 0 to 255, looping x times per minute
-    uint8_t pos = beat8(bpm);
+      // beat8(x) returns a number from 0 to 255, looping x times per minute
+      uint8_t pos = beat8(bpm);
 
-    // Convert the position to an index for the LED on our strip
-    uint8_t led = map8(pos, 0, NUM_LEDS - 1);
-    leds[led] = CRGB::White;
-    FastLED.show();
+      // Convert the position to an index for the LED on our strip
+      uint8_t led = map8(pos, 0, NUM_LEDS - 1);
+      leds[led] = CRGB::White;
+      FastLED.show();
+    }
   }
 }
 
 void loop() {
-  playDemoLocal();
+  //playDemoLocal();
+  playDemoPOI();
+
   //  button.update();
   //  if (button.rose()) {
   //    die();

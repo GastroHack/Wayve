@@ -1,22 +1,23 @@
 # Wayve - Project documentation
 
 **Team Members:** David Sauer, Azur Mešić, Valeria Chavez-Klier, Michael Giang, Ralf Vetter
+
 **Author:** David Sauer (davidsauer@web.de)
 
-This Git project includes our team outcome during the 2nd Gastrohackathon on the 6th/7th November 2021 at the Messezentrum Salzburg. Within a 24-hours-challenge, we aimed to develop a novel and futuristic concept for tourism in the near future. With Wayve we present a more non-digital approach for drifting throughout the city like never before. Thanks to its unique outlook, tourists can experience more city’s insights without using any digital device other than a screen-less wearable. Moreover, they can meet open-minded locals on their way and interact intuitively with them just by waving. Finally, all these memories would be saved on the phone to access them later and relive the trip in detail once more.
+This Git project contains our team result during the 2nd Gastrohackathon on November 6/7, 2021 at the Messezentrum Salzburg. Within a 24-hour challenge, our goal was to develop a novel and futuristic concept for the tourism industry in the near future. With Wayve we present a non-digital approach to "drift" through the city like never before. Thanks to its unique approach to enhance the travel experience, tourists can learn more about the city without using any digital device other than a screenless wearable. They can also meet open-minded locals along the way and interact with them intuitively by simply waving at them. Finally, all these memories can be stored on the phone for later retrieval and reliving the journey in nostalgic fashion.
 
 
+# Important files  
+[Link to User Flow](https://whimsical.com/memories-477bN2r2PB5y6mhaZHsFkF)  
+The user flow describes three basic flows of the most important interactions. These are meeting locals, finding points of interest (POI), and accessing past memories. The first flow deals with finding a POI. The app does not offer specific locations, instead users are limited to broader options such as "bar/café," museum, beach, etc. The app then randomly selects one of the options available nearby and activates the wristband. The bracelet guides the user to their destination by giving haptic, visual and auditive feedback. There is no other way to find the destination because the goal is to drift and encourage exploration. The second process involves meeting locals. First, the option must be enabled within the app, otherwise the feature is disabled. No further user input is required. Once the user is near a friendly local person, both wristbands vibrate. Users are prompted to wave to the other person. Once both wave, a connection is established and stored in the app. The last feature deals with recapturing experiences. Here, users can see all their pictures, the places they have visited, and all the people they have met and connected with so far.
 
-# Important files
-- Link
-The user flow describes three basic flows of the main interactions. Those are meeting locals, finding points of interest (POI), and accessing previous memories. The first flow deals with finding a POI. The app does not offer specific locations, instead users are limited to broader options such as "bar/cafe", musem, beach, etc. The app then picks at random from one of the nearby avaliable options and activates the bracelet. The bracelet guides the user through vibrations, lights and sound to their destination. There is no other way to find the destination, since the goal is to encourage exploration. The second flow deals with meeting locals. Firstly the option must be enabled inside the app, otherwise the functionality is disabled. If active, no other user input is required. Once the user is close to a friendly local person both of their wristbands will vibrate. Users are encouraged to wave at the other person, and once both wave, a connection is formed and stored in the app. The final flow deals with accessing memories. Here users can see all of their pictures, places they have visited and every person they have met and connected with thus far.
-
-- `xxx.xd`
-The xd-file contains the current state of the companion application which is mainly there to revisit collected experiences in retrospect. After building some rough wireframes in the beginning to start prototyping, we quickly passed over to conceptualise the two main user flows in high-fidelity. (Explain flows in more detail; model is iPhone 11, Apple design language, anything else?)
+**xxx.xd**  
+The xd-file contains the current state of the companion application which is mainly there to revisit collected experiences in retrospect. After building some rough wireframes in the beginning to start prototyping, we quickly passed over to conceptualise the three main user flows in high-fidelity. The first user flow is to find a local person in the area. Users can locate other people or locals to engage in conversation and share their impressions of the city and let them discover hidden treasures of the city. The second user flow allows users to explore the city based on their stated preferences. When a local store is found, the user receives a small gift in the form of a voucher to try it out. The third flow includes memories of past trips and shows pictures taken and moments shared in places or with people.
+Our mockup targets the iPhone X/11/12 resolution to have a large viewport that can highlight the most important element of our application: the images and videos of the past experiences. Therefore, we designed our UI elements according to Apple's Human Interaction Guidelines to meet human factors and ergonomics standards in screen design. The look and feel of this concept is meant to convey a sense of nostalgia and make the user recapture the adventurous moments in life.
 
 - `wearable.ino`
 In this Arduino script we prototyped first simple demos of our two main user interactions with the wearable device. That means
-	>**a)** the user interaction when meeting up with a local
+	>**a)** the user interaction when meeting up with a local  
 	>**b)** the user interaction when connecting with a POI
 
 	More details on how to rebuild the prototype and try out the interaction demos follows in the chapter below.
@@ -44,7 +45,7 @@ We added a circuit diagram of the hardware setup in the media folder. Just follo
 
 You can switch between the two user interaction demos with the button(s) on the small breadboard. A little RGB right next to it visualises in which demo you are in. Pictures and videos of both, the prototype and the user interactions can be visited in the media folder.
 
->**Turquoise light:**	Interaction demo #1 - Meeting a local
+>**Turquoise light:**	Interaction demo #1 - Meeting a local  
 >**Orange light:** 		Interaction demo #2 - Connecting with a POI
 
 ### Interaction demo #1 - Meeting a local
@@ -57,4 +58,4 @@ The second demo is about connecting with a POI. A POI can be any local activity 
 
 # Outlook
 
-add vibration motor, 
+The vision and concept are set, but due to lack of time and materials we decided to realize the most important features in the Gastrohackathon. Framing our project gave us the opportunity to communicate our vision to our partners and stakeholders. We see further work in the integration of a vibration motor. The DRV2605 is a stepper motor capable of sending haptic signals in a wide variance. This actuator will allow us to develop the physical interaction we are aiming for in this project. In addition, initial user testing will be required to validate the concept. We will also look at how to incorporate the sensors and actuators into the 3D rendering we created during the hackathon.  
